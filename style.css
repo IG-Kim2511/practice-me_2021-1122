@@ -1,105 +1,115 @@
-/*  */
-:root {
-    --bg-color: #fff;
-    --link-color: #000;
-    --link-size: 1.1rem;
-    --right-side-bg-color: #adb5bd;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
-
-    --color-10: #003049;
-    --color-10-dark: #01111a;
-  
-    --color-20: #98C8D7;
-
-    --color-30: #446df6;
-  
-    --color-40: #33ca7f;
-  
-    --color-50: #fee101;
-  
-    --color-70: #f77f00;
-    --color-70-dark: #5e3101;
-  
-    --color-80: #fcbf49;
-    --color-80-dark: #a8740c;
-  
-    --color-90: #eae2b7;
+:root{
+  --black:#2c2c54;
+  --orange:#ff9f1a;
 }
 
+*{   
+    font-family: 'Nunito', sans-serif;
+    /* 🦄 tip: 묶어서 정리 */
+    margin: 0; padding: 0;
 
-/*  */
-
-*{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
-    
+    outline: none; border: none;
+    text-decoration: none; 
+
+    /* 🦄 capitalize : 첫 글자만 대문자*/
+    text-transform: capitalize; 
+
+     /* 🦄  모든 transition에 공통으로 넣음. 일일히 각 element마다 transition넣을 필요없음*/
+    transition: all 0.2s linear; 
 }
 
 html{
-    font-size: 16px;
+    font-size: 62.5%;
+
+     /* 🦄 tip: 코딩편함  */
     overflow-x: hidden;
-}
-a{
-    text-decoration: none;
-    color: var(--link-color);
+
+     /* 🦄 ???   */
+    scroll-padding-top:  6rem; 
+
+     /* 🦄 scroll smooth  */
+    scroll-behavior: smooth; 
 }
 
-/*  */
-.app-container{
-    width: 100vw;
-    height: 100vh;
+section{
+    padding: 2rem 9%;
 }
 
-.world{
-    width: 100vw;
-    height: 100vh;
+.heading{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: var(--black);
+    padding: 1rem;
 }
 
-.app-bg{
+.heading span{
+    text-transform: uppercase;
+    color: var(--orange);
+}
+
+/* ~~~~ */
+
+header{
     position: fixed;
-    top: 0;
-    left: 0;
 
-    width: 100vw;
-    height: 100vh;
+    /* 🦄 tip: 묶어서 정리 */
+    top: 0; left: 0; right: 0;
+
+    z-index: 1000;
+    background-color: #fff;
     display: flex;
-    z-index: -1;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+
 }
 
-.app-bg .left-side{
-    background-color: var(--bg-color);
-    width: 75%;
-    height: 100%;
-}
-.app-bg .right-side{
-    background-color: var(--right-side-bg-color);
-    width: 25%;
-    height: 100%;
+header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
 }
 
-.myBtn{
-    width: 100%;
-    background-color: green;
-    border-radius: 4px;
-    border: 1px solid #ffffff;
-    display: inline-block;
+header .navbar a{
+    font-size: 1.7rem;
+    color: var(--black);
+    margin: 0 1rem;
+}
+
+header .navbar a:hover{
+    color: var(--orange);
+}
+
+header .icons a{
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-left: 1.5rem;
+}
+header .icons a:hover{
+    color: var(--orange);
+}
+
+#menu-bar{
+    background-color: yellow;
+
+    font-size: 2.5rem;
+    padding: 0.5rem 1.5rem;
+    border: 0.1rem solid var(--black);
+    color: var(--black);
+    border-radius: 0.3rem;
     cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 1.3rem;
-    padding: 6px 65px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px orange;
+    display: none;  /* JS */
 }
 
-.myBtn:hover{
-    background-color: lightgreen;
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+    
+    header{
+        padding: 2rem;
+    }
 }
-
-.myBtn:active{
-    position: relative;
-    top: 1px;
-}
-
-/* header */
